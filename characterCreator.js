@@ -1,7 +1,7 @@
 //random should already work 
 
 function sendTextToHTML(text, htmlID) {
-    console.log("In function"); 
+    console.log("In send text to html"+text); 
     document.getElementById(htmlID).innerHTML = text; 
 }
 
@@ -21,11 +21,15 @@ class Character{
 
 }
 
-var races =  ["human", "halfling", "gnome", "half-orc", "dwarf", "half-Elf", "elf"];
-var textBox = document.getElementById("textBox"); 
+var races =  ["human", "halfling", "gnome", "half-orc", "dwarf", "half-Elf", "elf"]; 
 
 function main()
 {
+    //Creates the textbox from javascript for easier manipulation and scaling 
+    var textBox = document.createElement("P"); 
+    textBox.setAttribute("id", "textBox");
+    document.body.appendChild(textBox);
+
     console.log("Displaying message"); 
     sendTextToHTML("this is some dummy text sent from javascript", "textBox"); 
 }
